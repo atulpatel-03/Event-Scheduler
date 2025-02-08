@@ -33,9 +33,8 @@ export type AppActions =
 export type Event = {
   date: string;
   day: number;
-
-  id?: string;
-  description?: string;
+  id: string;
+  description: string;
 };
 
 export type EventModalDetails = {

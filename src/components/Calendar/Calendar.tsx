@@ -51,6 +51,8 @@ const Calendar = () => {
         open_event_modal({
           date: formatted_date,
           day: selectedDay,
+          id: "",
+          description: "",
         })
       );
     }

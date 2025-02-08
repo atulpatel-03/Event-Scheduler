@@ -5,12 +5,9 @@ import {
   REMOVE_EVENT,
 } from "./reduxConstants";
 
-export const add_event = (event: {
-  id: string;
-  day: number;
-  date: string;
-  description: string;
-}) => ({
+import { Event } from "@/utils/type";
+
+export const add_event = (event: Event) => ({
   type: ADD_EVENT,
   payload: event,
 });
@@ -20,13 +17,7 @@ export const remove_event = (id: string) => ({
   payload: id,
 });
 
-export const open_event_modal = (current_event: {
-  day: number;
-  date: string;
-
-  id?: string;
-  description?: string;
-}) => ({
+export const open_event_modal = (current_event: Event) => ({
   type: OPEN_EVENT_MODAL,
   payload: current_event,
 });
