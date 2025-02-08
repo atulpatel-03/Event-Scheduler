@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import useEventModal from "./useEventModal";
 import EventModalContext from "./context";
 import EventModalComp from "./components/EventModalComp";
-import { EventModalDetails } from "@/utils/type";
 import { RootState } from "@/redux/store";
 
 const EventModalContextComp = () => {
