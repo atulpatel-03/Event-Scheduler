@@ -4,6 +4,7 @@ import useEventModal from "./useEventModal";
 import EventModalContext from "./context";
 import EventModalComp from "./components/EventModalComp";
 import { EventModalDetails } from "@/utils/type";
+import { RootState } from "@/redux/store";
 
 const EventModalContextComp = () => {
   const value = useEventModal();
@@ -16,10 +17,9 @@ const EventModalContextComp = () => {
 };
 
 const EventModal = () => {
-  const event_modal_details = useSelector<
-    { event_modal_details: EventModalDetails },
-    EventModalDetails
-  >((state) => state.event_modal_details);
+  const event_modal_details = useSelector(
+    (state: RootState) => state.event_modal_details
+  );
 
   const { is_open } = event_modal_details;
 

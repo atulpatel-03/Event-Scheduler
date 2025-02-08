@@ -34,13 +34,11 @@ const app = (state: AppState = initialState, action: AppActions) => {
       );
 
       if (existing_event_idx !== -1) {
-        // If the event already exists, replace it with the updated event
         const updatedEvents = state.events.map((event: Event) =>
           event.id === action.payload.id ? action.payload : event
         );
         return { ...state, events: updatedEvents };
       } else {
-        // If the event doesn't exist, add it to the events array
         return { ...state, events: [action.payload, ...state.events] };
       }
 

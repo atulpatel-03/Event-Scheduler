@@ -10,14 +10,13 @@ import { open_event_modal } from "@/redux/actions/app";
 import { Event } from "@/utils/type";
 import EmptyDayCard from "./components/EmptyDayCard";
 import WeekDaysHeader from "./components/WeekDaysHeader/WeekDaysHeader";
+import { RootState } from "@/redux/store";
 
 const Calendar = () => {
   const [current_date, set_current_date] = useState<Date>(new Date());
 
   const dispatch = useDispatch();
-  const events = useSelector<{ events: Event[] }, Event[]>(
-    (state) => state.events
-  );
+  const events = useSelector((state: RootState) => state.events);
 
   const days = useMemo(() => {
     return utils.get_days_in_month(

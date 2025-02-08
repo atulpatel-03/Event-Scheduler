@@ -9,12 +9,11 @@ import EventCard from "./components/EventCard";
 import { SORT_BY_VALUES } from "./constants";
 import NoEvents from "./components/NoEvents/NoEvents";
 import FilterComp from "./components/FilterComp";
+import { RootState } from "@/redux/store";
 
 const AllEvents = () => {
   const dispatch = useDispatch();
-  const events = useSelector<{ events: Event[] }, Event[]>(
-    (state) => state.events
-  );
+  const events = useSelector((state: RootState) => state.events);
 
   const [filter_data, set_filter_data] = useState({
     search_query: "",

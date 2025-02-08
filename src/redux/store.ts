@@ -19,4 +19,6 @@ const persistedReducer = persistReducer<AppState, AppActions>(
 
 export const store: Store<AppState & PersistPartial, AppActions> =
   createStore(persistedReducer);
+
+export type RootState = ReturnType<typeof store.getState>;
 export const persistor = persistStore(store);
