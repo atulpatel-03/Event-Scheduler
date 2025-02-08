@@ -1,15 +1,22 @@
-import { legacy_createStore as createStore } from "redux";
-import { persistStore, persistReducer } from "redux-persist";
+import { legacy_createStore as createStore, Store } from "redux";
+import { persistStore, persistReducer, PersistConfig } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { PersistPartial } from "redux-persist/es/persistReducer";
 
-import app from "./reducers/app";
+import { AppActions } from "@/utils/type";
+import app, { AppState } from "./reducers/app";
 
-const persistConfig = {
+const persistConfig: PersistConfig<AppState> = {
   key: "root",
   storage,
+  whitelist: ["events"],
 };
 
-const persistedReducer = persistReducer(persistConfig, app);
+const persistedReducer = persistReducer<AppState, AppActions>(
+  persistConfig,
+  app
+);
 
-export const store = createStore(persistedReducer);
+export const store: Store<AppState & PersistPartial, AppActions> =
+  createStore(persistedReducer);
 export const persistor = persistStore(store);

@@ -6,7 +6,7 @@ import {
   CLOSE_EVENT_MODAL,
 } from "../actions/reduxConstants";
 
-interface AppState {
+export interface AppState {
   events: Event[];
   event_modal_details: EventModalDetails;
 }
