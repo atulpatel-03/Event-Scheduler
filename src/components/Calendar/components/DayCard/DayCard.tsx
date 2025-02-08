@@ -7,6 +7,7 @@ interface DayCardProps {
   day: number;
   handle_date_select: (day: number) => void;
   handle_edit_event: (item: Event) => void;
+  is_today: boolean;
 }
 
 const DayCard = ({
@@ -14,6 +15,7 @@ const DayCard = ({
   day,
   handle_date_select,
   handle_edit_event,
+  is_today,
 }: DayCardProps) => {
   const handle_day_click = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -26,7 +28,12 @@ const DayCard = ({
   };
 
   return (
-    <div className={styles.dayContainer} onClick={handle_day_click}>
+    <div
+      className={`${styles.dayContainer} ${
+        is_today ? styles.todayContainer : ""
+      }`}
+      onClick={handle_day_click}
+    >
       <div className={styles.daysText}>{day}</div>
       <div className={styles.eventsContainer}>
         {events.map((event) => (

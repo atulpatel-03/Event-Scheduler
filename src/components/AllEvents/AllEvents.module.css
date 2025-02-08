@@ -5,23 +5,25 @@
 
 .header{
     background-color: var(--medium-gray);
+   
 }
 
 .header, .eventRow {
     display: flex;
     justify-content: space-between;
-  }
+    align-items: center;
+    border-bottom: 1px solid var(--light-gray);
+}
 
 .eventHeading {
     border: 1px solid var(--medium-gray);
     padding: 10px;
     font-weight: 500;
     font-size: 18px;
-  
+    align-items: center;
 }
 
 .eventData{
-    border-bottom: 1px solid var(--light-gray);
     padding: 10px;
     font-size: 16px;
     margin: 4px 0px;
@@ -120,11 +122,10 @@
     margin-top: 20px;
 }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .headerItem, .eventItem {
       flex: none; 
       width: 100%;
-      margin-bottom: 10px;
     }
   }
   
@@ -142,5 +143,15 @@
 
     .headerItem, .eventItem {
       font-size: 14px; 
+    }
+
+    .searchInput{
+        width:50%;
+    }
+
+    .sortButton{
+        font-size: 14px;
+        padding: 4px 8px;
+        width: 45%;
     }
   }

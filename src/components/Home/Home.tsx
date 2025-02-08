@@ -11,9 +11,15 @@ const HomeScreen = () => {
         The Event Scheduler helps you manage your events efficiently. View your
         calendar, add new events, and keep track of important dates.
       </p>
-      <Link href="/calendar" className={styles.eventBtn}>
-        Go to Event Scheduler
-      </Link>
+      <div className={styles.buttonContainer}>
+        <Link href="/calendar" className={styles.eventBtn}>
+          Schedule Event
+        </Link>
+
+        <Link href="/events" className={styles.eventBtnSecondary}>
+          Already Scheduled Events
+        </Link>
+      </div>
     </div>
   );
 };

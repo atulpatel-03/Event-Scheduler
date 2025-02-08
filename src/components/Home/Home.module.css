@@ -21,19 +21,49 @@
     color: #555;
     max-width: 600px;
   }
-  
-  .eventBtn {
-    display: inline-block;
+
+  .eventBtn, .eventBtnSecondary{
     padding: 15px 30px;
-    font-size: 18px;
-    color: white;
-    background-color: #4caf50;
+    font-size: 16px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
+    cursor: pointer;
+    text-align: center;
   }
   
-  .eventBtn:hover {
-    background-color: #45a049;
+  .eventBtn {
+    color: white;
+    background-color: var(--primary-color);
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: 10px;
+  }
+
+  .eventBtnSecondary {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
   }
   
+  @media screen and (max-width: 480px) {
+    .homeScreen{
+      height: 95vh;
+    }
+
+    .homeScreen h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .homeScreen p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .eventBtn, .eventBtnSecondary{
+      font-size: 12px;
+      padding: 10px 15px;
+    }
+  }

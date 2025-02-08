@@ -11,7 +11,7 @@ export interface AppState {
   event_modal_details: EventModalDetails;
 }
 
-const initialModalDetails = {
+const initial_modal_details = {
   is_open: false,
   id: "",
   date: "",
@@ -20,13 +20,13 @@ const initialModalDetails = {
 };
 
 // Define the initial state
-const initialState: AppState = {
+const initial_state: AppState = {
   events: [],
-  event_modal_details: initialModalDetails,
+  event_modal_details: initial_modal_details,
 };
 
 // Define the reducer
-const app = (state: AppState = initialState, action: AppActions) => {
+const app = (state: AppState = initial_state, action: AppActions) => {
   switch (action.type) {
     case ADD_EVENT:
       const existing_event_idx = state.events.findIndex(
@@ -59,7 +59,7 @@ const app = (state: AppState = initialState, action: AppActions) => {
     case CLOSE_EVENT_MODAL:
       return {
         ...state,
-        event_modal_details: initialModalDetails,
+        event_modal_details: initial_modal_details,
       };
 
     default:

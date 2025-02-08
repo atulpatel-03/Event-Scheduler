@@ -84,6 +84,15 @@ const Calendar = () => {
                 event.day === day && event.date === formatted_date
             );
 
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset to midnight
+
+            const selected_date = new Date(current_date);
+            selected_date.setDate(day);
+            selected_date.setHours(0, 0, 0, 0); // Reset to midnight
+
+            const is_today = selected_date.getTime() === today.getTime();
+
             return (
               <DayCard
                 key={idx}
@@ -91,6 +100,7 @@ const Calendar = () => {
                 handle_date_select={handle_select_date}
                 events={filteredEvents}
                 handle_edit_event={handle_edit_evet}
+                is_today={is_today}
               />
             );
           })}

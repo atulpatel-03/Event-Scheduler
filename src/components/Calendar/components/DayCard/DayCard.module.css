@@ -9,6 +9,10 @@
     min-height: 7vw;
 }
 
+.todayContainer{
+    background-color: lightblue;
+}
+
 .eventsContainer{
     display: flex;
     flex-direction: column;
