@@ -1,0 +1,45 @@
+.emptyScreenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    text-align: center;
+  
+  }
+
+.emptyState {
+    text-align: center;
+    padding: 40px;
+    border: 1px dashed var(--medium-gray);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.emptyState h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.emptyState p {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.addEventButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.addEventButton:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,36 @@
+.calendarHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.weekdaysContainer{
+    flex:1;
+    border: 1px solid var(--medium-gray);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weekdaysContainer:not(:last-child) {
+    border-right: none;
+}
+
+.daysText{
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .daysText{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .daysText{
+        font-size: 8px;
+    }
+}

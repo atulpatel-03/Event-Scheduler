@@ -1,0 +1,42 @@
+.calendarContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 8px;
+}
+
+.calendarHeaderContainer{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 16px 0px;
+}
+
+.calendarHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.calendarGrid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 100%;
+}
+
+.empty {
+    background-color: #f0f0f0;
+}
+
+
+@media screen and (max-width: 768px) {
+    .calendarContainer{
+       
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calendarContainer{
+       
+    }
+}

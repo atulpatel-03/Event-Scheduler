@@ -1,0 +1,146 @@
+.eventsContainer {
+    width: 100%;
+    padding: 16px;
+}
+
+.header{
+    background-color: var(--medium-gray);
+}
+
+.header, .eventRow {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.eventHeading {
+    border: 1px solid var(--medium-gray);
+    padding: 10px;
+    font-weight: 500;
+    font-size: 18px;
+  
+}
+
+.eventData{
+    border-bottom: 1px solid var(--light-gray);
+    padding: 10px;
+    font-size: 16px;
+    margin: 4px 0px;
+    align-items: center;
+}
+
+  /* Custom widths for each column */
+.headerItem:nth-child(1), .eventItem:nth-child(1) {
+    flex: 0 0 10%;
+  }
+  
+  .headerItem:nth-child(2), .eventItem:nth-child(2) {
+    flex: 0 0 25%;
+  }
+  
+  .headerItem:nth-child(3), .eventItem:nth-child(3) {
+    flex: 1;
+  }
+  
+  .headerItem:nth-child(4), .eventItem:nth-child(4) {
+    flex: 0 0 10%;
+  }
+
+  .eventData:nth-child(4){
+    padding: 5px;
+    
+  }
+  
+  .editIcon{
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  .editIcon:hover{
+    cursor: pointer;
+    background-color: var(--light-gray);
+  }
+
+  .editText{
+    padding: 0px 8px;
+  }
+
+  /* ✅ Search & Sort Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.searchInput {
+    padding: 8px;
+    font-size: 16px;
+    width: 60%;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    outline: none;
+}
+
+.sortButton {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 6px 8px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.selectBar {
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+    color:#45a049;
+
+    /* Remove default browser styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.noEvents {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+    margin-top: 20px;
+}
+
+  @media (max-width: 768px) {
+    .headerItem, .eventItem {
+      flex: none; 
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .eventHeading {
+        padding: 8px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .eventData{
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .headerItem, .eventItem {
+      font-size: 14px; 
+    }
+  }

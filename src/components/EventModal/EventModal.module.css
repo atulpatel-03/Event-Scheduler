@@ -1,0 +1,93 @@
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 350px;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--medium-gray);
+  }
+
+  .header h3{
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .bodyContainer{
+    padding: 12px;
+  }
+  
+  .textArea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid lightgray;
+    resize: none;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .btn{
+    border-radius: 8px;
+		padding: 10px 20px;
+		align-items: 'center';
+    border: 1px solid var(--medium-gray);
+    background-color: var(--white-color);
+  }
+
+  .btn:hover{
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--alert-color);
+  }
+
+  .primaryBtn{
+    border: 1px solid var(--primary-color);
+    color: var(--white-color);
+    background-color: var(--primary-color);
+  }
+
+  .primaryBtn:hover{
+    background-color: var(--button-hover-color);
+  }
+
+  .closeBtn:hover{
+    background-color: var(--medium-gray);
+  }
+
+  .modalFooter{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 12px;
+    border-top: 1px solid var(--medium-gray);
+  }
+
+
+@media screen and (max-width: 480px) {
+  .header h3{
+    font-size: 12px;
+  }
+
+  .modalFooter, .header, .bodyContainer{
+    padding: 8px;
+  }
+}

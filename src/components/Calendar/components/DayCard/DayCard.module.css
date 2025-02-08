@@ -1,0 +1,45 @@
+.dayContainer{
+    flex:1;
+    border: 1px solid var(--light-gray);
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 7vw;
+}
+
+.eventsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:4px;
+}
+
+.eventMarker {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 10px;
+    padding: 5px;
+  }
+
+
+@media screen and (max-width: 768px) {
+    .daysText{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dayContainer{
+        min-height: 20vw;
+    }
+
+    .eventMarker{
+        font-size: 6px;
+    }
+
+    .daysText{
+        font-size: 8px;
+    }
+}
