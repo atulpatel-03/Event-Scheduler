@@ -3,7 +3,7 @@ import {
   close_event_modal,
   remove_event,
 } from "@/redux/actions/app";
-import { EventModalDetails } from "@/utils/type";
+import { EventModalDetails, Event } from "@/utils/type";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
@@ -57,8 +57,10 @@ const useEventModal = () => {
 
   useEffect(() => {
     if (id) {
-      const current_event = events.filter((e: Event) => e.id === id);
-      set_current_event(current_event);
+      const current_event = events.find((eve: Event) => eve.id === id);
+      if (current_event) {
+        set_current_event(current_event);
+      }
     }
   }, [id, events]);
 
