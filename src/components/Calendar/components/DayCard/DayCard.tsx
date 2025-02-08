@@ -1,4 +1,4 @@
-import { Event } from "../../types";
+import { Event } from "@/utils/type";
 
 import styles from "./DayCard.module.css";
 

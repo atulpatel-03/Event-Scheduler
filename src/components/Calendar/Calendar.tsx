@@ -7,7 +7,7 @@ import styles from "./Calendar.module.css";
 import DayCard from "./components/DayCard/DayCard";
 import Header from "./components/Header/Header";
 import { open_event_modal } from "@/redux/actions/app";
-import { Event } from "./types";
+import { Event } from "@/utils/type";
 import EmptyDayCard from "./components/EmptyDayCard";
 import WeekDaysHeader from "./components/WeekDaysHeader/WeekDaysHeader";
 
