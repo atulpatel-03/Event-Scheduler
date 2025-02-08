@@ -40,9 +40,8 @@ export type Event = {
 
 export type EventModalDetails = {
   is_open: boolean;
-
-  id?: string;
-  date?: string;
-  day?: number;
-  description?: string;
+  id: string;
+  date: string;
+  day: number;
+  description: string;
 };
