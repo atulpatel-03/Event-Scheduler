@@ -1,10 +1,15 @@
-import { AppActions, Event } from "@/utils/type";
+import { AppActions, Event, EventModalDetails } from "@/utils/type";
 import {
   ADD_EVENT,
   REMOVE_EVENT,
   OPEN_EVENT_MODAL,
   CLOSE_EVENT_MODAL,
 } from "../actions/reduxConstants";
+
+interface AppState {
+  events: Event[];
+  event_modal_details: EventModalDetails;
+}
 
 const initialModalDetails = {
   is_open: false,
@@ -15,13 +20,13 @@ const initialModalDetails = {
 };
 
 // Define the initial state
-const initialState = {
+const initialState: AppState = {
   events: [],
   event_modal_details: initialModalDetails,
 };
 
 // Define the reducer
-const app = (state = initialState, action: AppActions) => {
+const app = (state: AppState = initialState, action: AppActions) => {
   switch (action.type) {
     case ADD_EVENT:
       const existing_event_idx = state.events.findIndex(
