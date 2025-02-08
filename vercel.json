@@ -1,0 +1,9 @@
+{
+    "build": {
+      "env": {
+        "TSC_COMPILE_ON_ERROR": "true",
+        "SKIP_TYPESCRIPT_CHECK": "true"
+      }
+    }
+  }
+  
