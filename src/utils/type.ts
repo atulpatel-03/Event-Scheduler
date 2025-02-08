@@ -1,4 +1,4 @@
-import { Action } from "redux";
+import { AnyAction } from "redux";
 
 import {
   ADD_EVENT,
@@ -7,23 +7,22 @@ import {
   CLOSE_EVENT_MODAL,
 } from "@/redux/actions/reduxConstants";
 
-export interface AddEventAction extends Action<typeof ADD_EVENT> {
+export interface AddEventAction extends AnyAction {
   type: typeof ADD_EVENT;
   payload: Event;
 }
 
-export interface RemoveEventAction extends Action<typeof REMOVE_EVENT> {
+export interface RemoveEventAction extends AnyAction {
   type: typeof REMOVE_EVENT;
   payload: string;
 }
 
-export interface OpenEventModalAction extends Action<typeof OPEN_EVENT_MODAL> {
+export interface OpenEventModalAction extends AnyAction {
   type: typeof OPEN_EVENT_MODAL;
   payload: Event;
 }
 
-export interface CloseEventModalAction
-  extends Action<typeof CLOSE_EVENT_MODAL> {
+export interface CloseEventModalAction extends AnyAction {
   type: typeof CLOSE_EVENT_MODAL;
 }
 
