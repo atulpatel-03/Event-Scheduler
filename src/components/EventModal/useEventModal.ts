@@ -3,12 +3,16 @@ import {
   close_event_modal,
   remove_event,
 } from "@/redux/actions/app";
+import { EventModalDetails } from "@/utils/type";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
 const useEventModal = () => {
-  const { event_modal_details, events } = useSelector((state: any) => ({
+  const { event_modal_details, events } = useSelector<
+    { event_modal_details: EventModalDetails; events: Event[] },
+    { event_modal_details: EventModalDetails; events: Event[] }
+  >((state) => ({
     event_modal_details: state.event_modal_details,
     events: state.events,
   }));
@@ -22,7 +26,11 @@ const useEventModal = () => {
 
   const dispatch = useDispatch();
 
-  const handle_change_descripition = (e: any) => {
+  const handle_change_descripition = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     set_description(e.target.value);
   };
 

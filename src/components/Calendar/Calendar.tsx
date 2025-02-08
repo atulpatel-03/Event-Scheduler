@@ -15,7 +15,9 @@ const Calendar = () => {
   const [current_date, set_current_date] = useState<Date>(new Date());
 
   const dispatch = useDispatch();
-  const events = useSelector((state: any) => state.events);
+  const events = useSelector<{ events: Event[] }, Event[]>(
+    (state) => state.events
+  );
 
   const days = useMemo(() => {
     return utils.get_days_in_month(

@@ -7,7 +7,11 @@ interface Props {
     search_query: string;
     sort_order: string;
   };
-  handle_on_change: (e: any) => void;
+  handle_on_change: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => void;
 }
 
 const FilterComp = ({ filter_data, handle_on_change }: Props) => {

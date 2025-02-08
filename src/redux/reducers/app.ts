@@ -1,4 +1,4 @@
-import { Event } from "@/utils/type";
+import { AppActions, Event } from "@/utils/type";
 import {
   ADD_EVENT,
   REMOVE_EVENT,
@@ -11,6 +11,7 @@ const initialModalDetails = {
   id: "",
   date: "",
   day: 1,
+  description: "",
 };
 
 // Define the initial state
@@ -20,7 +21,7 @@ const initialState = {
 };
 
 // Define the reducer
-const app = (state = initialState, action: any) => {
+const app = (state = initialState, action: AppActions) => {
   switch (action.type) {
     case ADD_EVENT:
       const existing_event_idx = state.events.findIndex(
@@ -29,7 +30,7 @@ const app = (state = initialState, action: any) => {
 
       if (existing_event_idx !== -1) {
         // If the event already exists, replace it with the updated event
-        const updatedEvents = state.events.map((event: any) =>
+        const updatedEvents = state.events.map((event: Event) =>
           event.id === action.payload.id ? action.payload : event
         );
         return { ...state, events: updatedEvents };

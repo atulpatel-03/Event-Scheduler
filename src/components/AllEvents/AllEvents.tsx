@@ -12,7 +12,9 @@ import FilterComp from "./components/FilterComp";
 
 const AllEvents = () => {
   const dispatch = useDispatch();
-  const events = useSelector((state: any) => state.events);
+  const events = useSelector<{ events: Event[] }, Event[]>(
+    (state) => state.events
+  );
 
   const [filter_data, set_filter_data] = useState({
     search_query: "",
@@ -21,7 +23,11 @@ const AllEvents = () => {
 
   const { search_query, sort_order } = filter_data;
 
-  const handle_on_change = (e: any) => {
+  const handle_on_change = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
     set_filter_data((prev) => ({
       ...prev,
