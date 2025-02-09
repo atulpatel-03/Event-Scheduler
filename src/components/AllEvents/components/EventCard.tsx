@@ -18,11 +18,15 @@ const EventCard = ({ event_details, index, handle_edit_event }: Props) => {
       <div className={`${styles.eventData} ${styles.eventItem}`}>
         {index + 1}
       </div>
-      <div className={`${styles.eventData} ${styles.eventItem}`}>
+      <div
+        className={`${styles.eventData} ${styles.eventItem} ${styles.dateItem}`}
+      >
         {" "}
         {utils.get_display_format_date(date)}
       </div>
-      <div className={`${styles.eventData} ${styles.eventItem}`}>
+      <div
+        className={`${styles.eventData} ${styles.eventItem} ${styles.descriptionItem}`}
+      >
         {description}
       </div>
       <div className={`${styles.eventData} ${styles.eventItem}`}>

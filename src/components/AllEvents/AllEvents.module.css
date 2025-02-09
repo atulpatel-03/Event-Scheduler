@@ -52,6 +52,14 @@
     
   }
   
+  .descriptionItem{
+    color: rgb(97, 96, 96)
+  }
+
+  .dateItem{
+    font-weight: 500;
+  }
+
   .editIcon{
     display: flex;
     align-items: center;
