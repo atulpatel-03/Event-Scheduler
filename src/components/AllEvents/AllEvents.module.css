@@ -78,7 +78,6 @@
     padding: 0px 8px;
   }
 
-  /* ✅ Search & Sort Controls */
 .controls {
     display: flex;
     justify-content: space-between;
@@ -135,9 +134,9 @@
       flex: none; 
       width: 100%;
     }
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .eventHeading {
         padding: 8px;
         font-weight: 500;
@@ -162,4 +161,4 @@
         padding: 4px 8px;
         width: 45%;
     }
-  }
+}
