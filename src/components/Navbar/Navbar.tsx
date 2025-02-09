@@ -4,6 +4,12 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Icons from "@/utils/Icons";
 
+/**
+ * Navbar Component:
+ * - Displays navigation links for the app.
+ * - Contains a mobile-friendly menu toggle.
+ */
+
 const Navbar = () => {
   const [menu_open, set_menu_open] = useState<boolean>(false);
 
@@ -13,6 +19,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
+      {/* Mobile menu icon (hamburger or close) */}
       <div className={styles.mobileView} onClick={open_menu}>
         {menu_open ? (
           <Icons.CloseIcon style={{ color: "white" }} />

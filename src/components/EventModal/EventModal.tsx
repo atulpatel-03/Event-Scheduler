@@ -5,6 +5,13 @@ import EventModalContext from "./context";
 import EventModalComp from "./components/EventModalComp";
 import { RootState } from "@/redux/store";
 
+/**
+ * EventModalContextComp:
+ * - Wraps the modal UI inside a Context Provider.
+ * - Uses `useEventModal` to get modal-related state & actions.
+ * - Provides this state to `EventModalComp` via Context API.
+ */
+
 const EventModalContextComp = () => {
   const value = useEventModal();
 
@@ -14,6 +21,14 @@ const EventModalContextComp = () => {
     </EventModalContext.Provider>
   );
 };
+
+/**
+ * EventModal:
+ * - Selects `event_modal_details` from Redux store.
+ * - Checks if the modal should be open (`is_open` flag).
+ * - If open, renders `EventModalContextComp`.
+ * - If not open, returns `null` to avoid rendering.
+ */
 
 const EventModal = () => {
   const event_modal_details = useSelector(

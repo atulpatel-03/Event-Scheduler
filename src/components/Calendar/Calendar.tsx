@@ -12,12 +12,19 @@ import EmptyDayCard from "./components/EmptyDayCard";
 import WeekDaysHeader from "./components/WeekDaysHeader/WeekDaysHeader";
 import { RootState } from "@/redux/store";
 
+// Calendar Component:
+// - Displays a monthly calendar view
+// - Allows users to select days, add/edit/delete events
+// - Supports navigation between months and years
+// - Uses Redux to manage event state
+
 const Calendar = () => {
   const [current_date, set_current_date] = useState<Date>(new Date());
 
   const dispatch = useDispatch();
   const events = useSelector((state: RootState) => state.events);
 
+  // Compute the days of the selected month (cached with useMemo for performance)
   const days = useMemo(() => {
     return utils.get_days_in_month(
       current_date.getMonth(),
@@ -25,39 +32,40 @@ const Calendar = () => {
     );
   }, [current_date]);
 
+  // Function to change the month based on direction (+1: next month, -1: previous month)
   const change_month = (direction: number) => {
     set_current_date((prev) => {
-      const newDate = new Date(prev);
-      newDate.setMonth(prev.getMonth() + direction);
-      return newDate;
+      const new_date = new Date(prev);
+      new_date.setMonth(prev.getMonth() + direction);
+      return new_date;
     });
   };
 
+  // Function to change the year based on direction (+1: next year, -1: previous year)
   const change_year = (direction: number) => {
     set_current_date((prev) => {
-      const newDate = new Date(prev);
-      newDate.setFullYear(prev.getFullYear() + direction);
-      return newDate;
+      const new_date = new Date(prev);
+      new_date.setFullYear(prev.getFullYear() + direction);
+      return new_date;
     });
   };
 
-  const handle_select_date = (selectedDay: number) => {
+  // Function to handle when a user selects a day to add an event
+  const handle_select_date = (selected_day: number) => {
     // Format the date as YYYY-MM-DD
-    const formatted_date = utils.get_formated_date(current_date, selectedDay);
-
-    if (selectedDay !== null) {
-      dispatch(
-        open_event_modal({
-          date: formatted_date,
-          day: selectedDay,
-          id: "",
-          description: "",
-        })
-      );
-    }
+    const formatted_date = utils.get_formatted_date(current_date, selected_day);
+    dispatch(
+      open_event_modal({
+        date: formatted_date,
+        day: selected_day,
+        id: "",
+        description: "",
+      })
+    );
   };
 
-  const handle_edit_evet = (selected_event: Event) => {
+  // Function to handle when a user edits an existing event
+  const handle_edit_event = (selected_event: Event) => {
     dispatch(open_event_modal(selected_event));
   };
 
@@ -78,12 +86,13 @@ const Calendar = () => {
               return <EmptyDayCard key={idx} />;
             }
 
-            const formatted_date = utils.get_formated_date(current_date, day);
-            const filteredEvents = events.filter(
+            const formatted_date = utils.get_formatted_date(current_date, day);
+            const filtered_events = events.filter(
               (event: Event) =>
                 event.day === day && event.date === formatted_date
             );
 
+            // Determine if the day is today
             const today = new Date();
             today.setHours(0, 0, 0, 0); // Reset to midnight
 
@@ -98,8 +107,8 @@ const Calendar = () => {
                 key={idx}
                 day={day}
                 handle_date_select={handle_select_date}
-                events={filteredEvents}
-                handle_edit_event={handle_edit_evet}
+                events={filtered_events}
+                handle_edit_event={handle_edit_event}
                 is_today={is_today}
               />
             );

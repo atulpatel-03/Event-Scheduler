@@ -11,6 +11,13 @@ interface Props {
   children: React.ReactNode;
 }
 
+/**
+ * ClientOnlyWrapper Component:
+ * - Provides Redux store to the entire application using `Provider`.
+ * - Uses `PersistGate` to delay rendering until persisted state is rehydrated.
+ * - Wraps all pages with a Navbar and EventModal.
+ */
+
 const ClientOnlyWrapper = ({ children }: Props) => {
   return (
     <Provider store={store}>

@@ -4,6 +4,16 @@ import Footer from "./Footer";
 import Header from "./Header";
 import EventModalContext from "../context";
 
+/**
+ * EventModalComp:
+ * - Renders the event modal UI.
+ * - Includes:
+ *   - Header (title, close button).
+ *   - Textarea for event description.
+ *   - Footer (Save, Update, Delete buttons).
+ * - Uses EventModalContext to get modal state & handlers.
+ */
+
 const EventModalComp = () => {
   const { description, handle_change_descripition } =
     useContext(EventModalContext);

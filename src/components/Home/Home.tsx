@@ -3,6 +3,12 @@ import Link from "next/link";
 
 import styles from "./Home.module.css";
 
+/**
+ * HomeScreen Component:
+ * - Serves as the landing page for the Event Scheduler app.
+ * - Provides navigation to the Calendar and Events pages.
+ */
+
 const HomeScreen = () => {
   return (
     <div className={styles.homeScreen}>

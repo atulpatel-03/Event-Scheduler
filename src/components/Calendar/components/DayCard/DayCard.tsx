@@ -10,6 +10,7 @@ interface DayCardProps {
   is_today: boolean;
 }
 
+// DayCard Component is used for showing each day with all added events
 const DayCard = ({
   events,
   day,

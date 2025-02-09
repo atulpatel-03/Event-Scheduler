@@ -1,3 +1,7 @@
+import { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+
 import {
   add_event,
   close_event_modal,
@@ -5,9 +9,14 @@ import {
 } from "@/redux/actions/app";
 import { RootState } from "@/redux/store";
 import { Event } from "@/utils/type";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+
+/**
+ * Custom Hook: useEventModal
+ * - Manages the event modal state (add, update, delete events)
+ * - Uses Redux for state management
+ * - Handles user input for event descriptions
+ * - Closes the modal when actions are completed
+ */
 
 const useEventModal = () => {
   const { event_modal_details, events } = useSelector((state: RootState) => ({
@@ -15,6 +24,7 @@ const useEventModal = () => {
     events: state.events,
   }));
 
+  // Destructure event details from Redux state
   const { id, date, day, description: old_description } = event_modal_details;
 
   const [current_event, set_current_event] = useState<Event>();
@@ -24,14 +34,19 @@ const useEventModal = () => {
 
   const dispatch = useDispatch();
 
-  const handle_change_descripition = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    set_description(e.target.value);
-  };
+  // Handles input change for the event description.
+  const handle_change_descripition = useCallback(
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >
+    ) => {
+      set_description(e.target.value);
+    },
+    []
+  );
 
+  // Saves or updates an event.
   const handle_save_event = () => {
     dispatch(
       add_event({
@@ -44,14 +59,15 @@ const useEventModal = () => {
     dispatch(close_event_modal());
   };
 
+  // Deletes an event and closes the modal
   const handle_delete_event = () => {
     dispatch(remove_event(id));
     dispatch(close_event_modal());
   };
 
-  const on_close = () => {
+  const on_close = useCallback(() => {
     dispatch(close_event_modal());
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     if (id) {

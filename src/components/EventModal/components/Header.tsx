@@ -3,6 +3,11 @@ import Icons from "@/utils/Icons";
 import EventModalContext from "../context";
 import { useContext } from "react";
 
+/**
+ * Modal Header:
+ * - Uses EventModalContext for state and actions.
+ */
+
 const Header = () => {
   const { current_event, on_close } = useContext(EventModalContext);
 

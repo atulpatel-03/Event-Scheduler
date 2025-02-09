@@ -1,4 +1,4 @@
-/* app/styles/globals.css */
+/* Global styles */
 
 /* Import fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Dancing+Script:wght@400;700&family=Pacifico&family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&family=Merriweather:wght@300;400;700&family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
@@ -41,7 +41,6 @@
   --font-bold: 700;
 }
 
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -52,53 +51,7 @@ body {
   font-family: var(--font-primary);
 }
 
-.selected {
-  background-color: lightblue;
-}
-
-.empty {
-  background-color: #f0f0f0;
-}
-
-.event-marker {
-  background-color: #ff6347;
-  color: white;
-  font-size: 10px;
-  padding: 5px;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-}
-
-textarea {
-  width: 100%;
-  height: 100px;
-}
-
-
 textarea::placeholder{
   color: gray;
- 
- }
-
-@media (max-width: 768px) {
-  .calendar-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
 }
+

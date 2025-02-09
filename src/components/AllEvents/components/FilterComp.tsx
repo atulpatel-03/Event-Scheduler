@@ -14,6 +14,7 @@ interface Props {
   ) => void;
 }
 
+// Filter component for searching & sorting
 const FilterComp = ({ filter_data, handle_on_change }: Props) => {
   const { search_query, sort_order } = filter_data;
 

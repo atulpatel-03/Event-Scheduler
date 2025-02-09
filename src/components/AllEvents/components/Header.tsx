@@ -1,5 +1,6 @@
 import styles from "../AllEvents.module.css";
 
+// Table Header
 const Header = () => {
   return (
     <div className={styles.header}>

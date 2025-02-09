@@ -1,6 +1,16 @@
-import styles from "../EventModal.module.css";
 import { useContext } from "react";
+
+import styles from "../EventModal.module.css";
 import EventModalContext from "../context";
+import ActionButton from "@/components/ActionButton/ActionButton";
+
+/**
+ * Footer Component:
+ * - Displays action buttons for the event modal.
+ * - Shows "Delete" if an event exists, otherwise "Close".
+ * - Shows "Update" if an event exists, otherwise "Add".
+ * - Uses EventModalContext for state and actions.
+ */
 
 const Footer = () => {
   const { current_event, on_close, handle_save_event, handle_delete_event } =
@@ -9,26 +19,23 @@ const Footer = () => {
   return (
     <div className={styles.modalFooter}>
       {current_event ? (
-        <button
-          className={`${styles.btn} ${styles.deleteBtn}`}
+        <ActionButton
+          className={styles.deleteBtn}
           onClick={handle_delete_event}
-        >
-          Delete
-        </button>
+          label="Delete"
+        />
       ) : (
-        <button
-          className={`${styles.btn}  ${styles.closeBtn}`}
+        <ActionButton
+          className={styles.closeBtn}
           onClick={on_close}
-        >
-          Close
-        </button>
+          label="Close"
+        />
       )}
-      <button
-        className={`${styles.btn} ${styles.primaryBtn}`}
+      <ActionButton
+        className={styles.primaryBtn}
         onClick={handle_save_event}
-      >
-        {current_event ? "Update" : "Add"}
-      </button>
+        label={current_event ? "Update" : "Add"}
+      />
     </div>
   );
 };

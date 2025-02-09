@@ -1,4 +1,4 @@
-import { Event } from "../type";
+import { Event } from "@/utils/type";
 import styles from "../AllEvents.module.css";
 import Icons from "@/utils/Icons";
 import utils from "@/utils/utils";
@@ -9,6 +9,7 @@ interface Props {
   handle_edit_event: () => void;
 }
 
+// EventCard use to show each events with editable functionality
 const EventCard = ({ event_details, index, handle_edit_event }: Props) => {
   const { date, description } = event_details;
 

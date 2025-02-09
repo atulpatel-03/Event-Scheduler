@@ -1,6 +1,7 @@
 import constants from "@/utils/constants";
 import styles from "./WeekDaysHeader.module.css";
 
+// Weekdays row
 const WeekDaysHeader = () => {
   return (
     <div className={styles.calendarHeader}>

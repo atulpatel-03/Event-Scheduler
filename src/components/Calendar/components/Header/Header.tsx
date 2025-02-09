@@ -6,6 +6,7 @@ interface Props {
   change_year: (direction: number) => void;
 }
 
+// Header component for month/year navigation
 const Header = ({ heading, change_month, change_year }: Props) => {
   return (
     <div className={styles.calendarHeaderContainer}>

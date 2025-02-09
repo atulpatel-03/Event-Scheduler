@@ -43,20 +43,6 @@
     padding: 8px;
   }
 
-  .btn{
-    border-radius: 8px;
-		padding: 10px 20px;
-		align-items: 'center';
-    border: 1px solid var(--medium-gray);
-    background-color: var(--white-color);
-  }
-
-  .btn:hover{
-    cursor: pointer;
-    color: var(--white-color);
-    background-color: var(--alert-color);
-  }
-
   .primaryBtn{
     border: 1px solid var(--primary-color);
     color: var(--white-color);
@@ -84,7 +70,7 @@
 
 @media screen and (max-width: 480px) {
   .header h3{
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .modalFooter, .header, .bodyContainer{

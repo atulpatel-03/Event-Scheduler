@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import styles from "./NoEvents.module.css";
 
+// Show Empty State if no events exist
 const NoEvents = () => {
   return (
     <div className={styles.emptyScreenContainer}>
