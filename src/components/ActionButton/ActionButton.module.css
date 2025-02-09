@@ -1,7 +1,7 @@
 .btn{
     border-radius: 8px;
-		padding: 10px 20px;
-		align-items: 'center';
+    padding: 10px 20px;
+    align-items: 'center';
     border: 1px solid var(--medium-gray);
     background-color: var(--white-color);
 }
@@ -10,4 +10,18 @@
     cursor: pointer;
     color: var(--white-color);
     background-color: var(--alert-color);
+}
+
+.primaryBtn{
+    border: 1px solid var(--primary-color);
+    color: var(--white-color);
+    background-color: var(--primary-color);
+  }
+
+.primaryBtn:hover{
+    background-color: var(--button-hover-color);
+}
+
+.closeBtn:hover{
+    background-color: var(--medium-gray);
 }

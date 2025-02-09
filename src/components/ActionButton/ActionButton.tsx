@@ -18,7 +18,7 @@ const ActionButton = ({
   className = "",
 }: ActionButtonProps) => (
   <button
-    className={`${styles.btn} ${className}`}
+    className={`${styles.btn} ${styles[className]}`}
     onClick={onClick}
     aria-label={label}
   >

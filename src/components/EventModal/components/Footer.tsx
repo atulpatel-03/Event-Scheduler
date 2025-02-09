@@ -25,14 +25,10 @@ const Footer = () => {
           label="Delete"
         />
       ) : (
-        <ActionButton
-          className={styles.closeBtn}
-          onClick={on_close}
-          label="Close"
-        />
+        <ActionButton className={"closeBtn"} onClick={on_close} label="Close" />
       )}
       <ActionButton
-        className={styles.primaryBtn}
+        className={"primaryBtn"}
         onClick={handle_save_event}
         label={current_event ? "Update" : "Add"}
       />
