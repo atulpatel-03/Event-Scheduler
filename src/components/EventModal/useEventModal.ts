@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
@@ -35,16 +35,13 @@ const useEventModal = () => {
   const dispatch = useDispatch();
 
   // Handles input change for the event description.
-  const handle_change_descripition = useCallback(
-    (
-      e: React.ChangeEvent<
-        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-      >
-    ) => {
-      set_description(e.target.value);
-    },
-    []
-  );
+  const handle_change_descripition = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    set_description(e.target.value);
+  };
 
   // Saves or updates an event.
   const handle_save_event = () => {
@@ -65,9 +62,9 @@ const useEventModal = () => {
     dispatch(close_event_modal());
   };
 
-  const on_close = useCallback(() => {
+  const on_close = () => {
     dispatch(close_event_modal());
-  }, [dispatch]);
+  };
 
   useEffect(() => {
     if (id) {

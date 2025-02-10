@@ -34,10 +34,10 @@ const app = (state: AppState = initial_state, action: AppActions) => {
       );
 
       if (existing_event_idx !== -1) {
-        const updatedEvents = state.events.map((event: Event) =>
+        const updated_events = state.events.map((event: Event) =>
           event.id === action.payload.id ? action.payload : event
         );
-        return { ...state, events: updatedEvents };
+        return { ...state, events: updated_events };
       } else {
         return { ...state, events: [action.payload, ...state.events] };
       }

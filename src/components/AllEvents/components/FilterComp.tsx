@@ -17,7 +17,6 @@ interface Props {
 // Filter component for searching & sorting
 const FilterComp = ({ filter_data, handle_on_change }: Props) => {
   const { search_query, sort_order } = filter_data;
-
   return (
     <div className={styles.controls}>
       <input

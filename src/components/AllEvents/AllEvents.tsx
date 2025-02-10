@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import styles from "./AllEvents.module.css";
 import { open_event_modal } from "@/redux/actions/app";
@@ -29,20 +29,17 @@ const AllEvents = () => {
   const { search_query, sort_order } = filter_data;
 
   // Function to handle search and sorting input changes
-  const handle_on_change = useCallback(
-    (
-      e: React.ChangeEvent<
-        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-      >
-    ) => {
-      const { name, value } = e.target;
-      set_filter_data((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    },
-    []
-  );
+  const handle_on_change = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    set_filter_data((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   // Function to filter and sort events
   const filtered_events = useMemo(() => {
@@ -64,12 +61,9 @@ const AllEvents = () => {
   }, [events, search_query, sort_order]);
 
   // Function to open the modal for editing an event
-  const handle_edit_event = useCallback(
-    (selectedEvent: Event) => {
-      dispatch(open_event_modal(selectedEvent));
-    },
-    [dispatch]
-  );
+  const handle_edit_event = (selectedEvent: Event) => {
+    dispatch(open_event_modal(selectedEvent));
+  };
 
   if (events.length === 0) {
     return <NoEvents />;
